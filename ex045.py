@@ -1,4 +1,4 @@
-import submain as sub
+import ex45_main as sub
 
 for c in range(99999):
     print('\033[1;34m-=\033[m' * 10, end=' ')
