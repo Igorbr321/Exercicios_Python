@@ -1,11 +1,10 @@
-from teste_funcoes import calcular_notas_saque, imprimir_notas
+from test_functions import calculate_notes_withdrawal, print_notes
 
 print('==' * 25)
-print('{:^45}'.format('BANCO CEV'))
+print('{:^45}'.format('CEV BANK'))
 print('==' * 25)
 
-cash = int(input('What amount do you want to withdraw? R$'))
+cash = int(input('What amount do you want to withdraw? $'))
 
-notas_50, notas_20, notas_10, notas_1 = calcular_notas_saque(cash)
-imprimir_notas(notas_50, notas_20, notas_10, notas_1)
-
+notes_50, notes_20, notes_10, notes_1 = calculate_notes_withdrawal(cash)
+print_notes(notes_50, notes_20, notes_10, notes_1)
