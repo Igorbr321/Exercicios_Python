@@ -4,6 +4,10 @@ print('-----' * 8)
 print('               AMAZON')
 print('-----' * 8)
 
+total_price = product_sum_price = 0
+min_price = float ('inf')
+min_price_product = ''
+
 while True:
     products = input('Type it the name of the product: ').strip().upper()
     while True:
@@ -21,11 +25,23 @@ while True:
         except ValueError:
             print('Please, type it one value to the product.')
 
+    total_price += price
+
+    if price >= 1000:
+        product_sum_price += 1
+
+    if price < min_price:
+        min_price = price
+        min_price_product = products
+
     while True:
-        question = str(input('\nDo you want continue [Y or N]? ')).strip().upper()
+        question = str(input('\nDo you want to continue [Y or N]? ')).strip().upper()
         question_first_letter = question[0]
 
         if question_first_letter == 'N':
+            print('Total price of all product: R${:.2f}'.format(total_price))
+            print('There are {} products greater than R$1000,00. '.format(product_sum_price))
+            print('Name of the prodcut with lowest price: {} '.format(min_price_product))
             print('Exiting...')
             sleep(2)
             exit()
@@ -33,9 +49,7 @@ while True:
             print('')
             break
         else:
-            print('Chose one of them options, YES or NO.')
-
-
+            print('Choose one of the options, YES or NO.')
 
 
 
